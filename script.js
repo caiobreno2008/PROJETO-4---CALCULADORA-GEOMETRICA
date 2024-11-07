@@ -1,5 +1,5 @@
 function menu() {
-  let option = prompt("Escolha uma opção: \n 1 - Área do Triângulo \n 2 - Área do Círculo \n 3 - Área do Quadrado \n 4 - Área do Retângulo \n 5 - Sair")
+  let option = prompt("Escolha uma opção: \n 1 - Área do Triângulo \n 2 - Área do Círculo \n 3 - Área do Quadrado \n 4 - Área do Retângulo \n 5 - Área do Trapézio \n 6 - Sair")
 
   switch(option) {
     case '1':
@@ -21,6 +21,12 @@ function menu() {
       alert("A área do retângulo é: " + areaRectangle(baseRectangle, heightRectangle))
       break
     case '5':
+      let base1Trapezium = parseFloat(prompt("Digite a base maior do trapézio:"))
+      let base2Trapezium = parseFloat(prompt("Digite a base menor do trapézio:"))
+      let heightTrapezium = parseFloat(prompt("Digite a altura do trapézio:"))
+      alert("A área do trapézio é: " + areaTrapezium(base1Trapezium, base2Trapezium, heightTrapezium))
+      break
+    case '6':
       exit()
       break
     default:
@@ -46,6 +52,11 @@ function areaSquare(side) {
 
 function areaRectangle(base, height) {
   let area = base * height
+  return area
+}
+
+function areaTrapezium(base1, base2, height) {
+  let area = ((base1 + base2) * height) / 2
   return area
 }
 
